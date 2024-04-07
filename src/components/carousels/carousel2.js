@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoLocationSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Carousel2 = () => {
   const images = [
@@ -29,19 +30,7 @@ const Carousel2 = () => {
     "San Juan Guided Snorkel Tour",
     "Hanoi Jeep Tours: Food+ Culture + Sight +Fun By Vietnam Army Jeep",
   ];
-  const sliderRef = useRef(null);
-
-  const goToPrevSlide = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
-
-  const goToNextSlide = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
+ 
   const settings = {
     dots: true,
     infinite: false,
@@ -71,12 +60,12 @@ const Carousel2 = () => {
         <p className="text-2xl font-semibold my-7 mx-2">Top experiences on Tripadvisor</p>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <a href="#">
+            <Link to="#">
               <div key={index} className="px-3">
                 <img
                   className="mx-auto rounded-md hover:opacity-90 filter brightness-75"
                   src={image}
-                  alt={`Image ${index}`}
+                  alt={`place ${index}`}
                 />
                 <div>
                   <p className=" text-lg font-semibold ">
@@ -84,21 +73,10 @@ const Carousel2 = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </Slider>
-        <button
-          onClick={goToPrevSlide}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-200 px-2 py-1 rounded-lg"
-        >
-          Prev
-        </button>
-        <button
-          onClick={goToNextSlide}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-200 px-2 py-1 rounded-lg"
-        >
-          Next
-        </button>
+       
       </div>
     </div>
   );
