@@ -3,7 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoLocationSharp } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import StarRatings from 'react-star-ratings';
+import badge from './badge.svg'
+
 
 const Carousel2 = () => {
   const images = [
@@ -30,29 +34,53 @@ const Carousel2 = () => {
     "San Juan Guided Snorkel Tour",
     "Hanoi Jeep Tours: Food+ Culture + Sight +Fun By Vietnam Army Jeep",
   ];
- 
+  const ratings = [
+    "3022",
+    "10,999",
+    "1233",
+    "12,333",
+    "12,212",
+    "9002",
+    "2121",
+    "4342",
+    "5432",
+    "9993"
+  ];
+  const price =[
+    "192",
+    "21",
+    "344",
+    "23",
+    "354",
+    "656",
+    "98",
+    "656",
+    "232",
+    "124"
+  ]
+
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
-    verticalSwiping:true,
-    arrows:true,
-    
+    slidesToScroll: 4,
+    verticalSwiping: true,
+    arrows: true,
+    swipe: true,
   };
 
   return (
     <div>
       <div className="mx-2 my-20">
         <p className="font-bold text-2xl">Your recent searches</p>
-        <button className="border-2 border-slate-300 rounded-lg my-6 flex items-center px-4 py-2" >
+        <button className="border-2 border-slate-300 rounded-lg my-6 flex items-center px-4 py-2">
           <span className="text-3xl">
             <IoLocationSharp />
           </span>
           <div>
-          <p className="font-semibold text-lg">Marrakech</p>
-          <p className="text-sm">Marrakech-Safi</p>
+            <p className="font-semibold text-lg">Marrakech</p>
+            <p className="text-sm">Marrakech-Safi</p>
           </div>
         </button>
       </div>
@@ -60,23 +88,48 @@ const Carousel2 = () => {
         <p className="text-2xl font-semibold my-7 mx-2">Top experiences on Tripadvisor</p>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <Link to="#">
-              <div key={index} className="px-3">
+            <Link to="#" key={index}>
+              <div >
+                <div className="px-3 relative">
+                <span className="absolute top-2 right-5 bg-slate-200 rounded-full p-2 text-xl z-10">
+                  <FaHeart className="text-red-500 hover:text-red-600 cursor-pointer" />
+                </span>
                 <img
-                  className="mx-auto rounded-md hover:opacity-90 filter brightness-75"
+                  className="mx-auto rounded-md hover:opacity-90 filter brightness-75 z-0"
                   src={image}
                   alt={`place ${index}`}
                 />
-                <div>
-                  <p className=" text-lg font-semibold ">
+                <div className="absolute bg-yellow-500 rounded-t-full bottom-2 left-5">
+                  <img
+                  src={badge}
+                  alt="logo"
+                  className="h-10 -mb-2"/>
+                  <p className="font-bold text-sm text-center">2023</p>
+                </div>
+                </div>
+                <div className="mt-2">
+                  <p className="text-lg font-semibold mt-1">
                     {imageTitles[index]}
                   </p>
+                  
+                  <div className="flex">
+                  <StarRatings
+                    rating={4.5} // Example rating, replace with actual rating
+                    starRatedColor="gold"
+                    starEmptyColor="gray"
+                    numberOfStars={5}
+                    name='rating'
+                    starDimension="20px"
+                    starSpacing="1px"
+                  /> 
+                  <p className="ml-3 mt-1 text-sm text-slate-500">{ratings[index]}</p>
+                  </div>
+                  <p className="text-sm font-semibold">from ${price[index]} per adult</p>
                 </div>
               </div>
             </Link>
           ))}
         </Slider>
-       
       </div>
     </div>
   );

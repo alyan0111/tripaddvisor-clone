@@ -26,6 +26,9 @@ const Carousel1 = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    adaptiveHeight:true,
+    swipe:true,
+    verticalSwiping:true
   };
 
   return (
@@ -37,8 +40,8 @@ const Carousel1 = () => {
       <div className="mx-auto max-w-6xl relative">
         <Slider {...settings}>
           {images.map((image, index) => (
-            <Link to="#">
-              <div key={index} className="px-3 relative">
+            <Link key={index} to="#">
+              <div  className="px-3 relative">
                 <img
                   className="mx-auto rounded-md hover:opacity-90 filter brightness-75"
                   src={image}
