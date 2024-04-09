@@ -29,7 +29,7 @@ const Carousel2 = () => {
     "Dubai Red Dunes ATV, Sandsurf, Stargazing & 5* BBQ Al Khayma Camp",
     "Best DMZ Tour Korea from Seoul (Red Suspension Bridge Optional)",
     "Reykjavik Food Walk - Local Foodie Adventure in Iceland",
-    "Amsterdam Luxury Live Guided Canal Cruise with Onboard Bar",
+    "Amsterdam Luxury Lives Guided Canal Cruise with Onboard Bar",
     "Small-Group Explore Angkor Wat Sunrise Tour with Guide from Siem Reap",
     "San Juan Guided Snorkel Tour",
     "Hanoi Jeep Tours: Food+ Culture + Sight +Fun By Vietnam Army Jeep",
@@ -65,9 +65,34 @@ const Carousel2 = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    verticalSwiping: true,
-    arrows: true,
-    swipe: true,
+    initialSlide: 0,
+    arrows:true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -84,7 +109,7 @@ const Carousel2 = () => {
           </div>
         </button>
       </div>
-      <div className="mx-auto max-w-6xl relative">
+      <div className="mx-auto max-w-64 sm:max-w-xl md:max-w-3xl lg:max-w-5xl relative">
         <p className="text-2xl font-semibold my-7 mx-2">Top experiences on Tripadvisor</p>
         <Slider {...settings}>
           {images.map((image, index) => (
@@ -108,11 +133,11 @@ const Carousel2 = () => {
                 </div>
                 </div>
                 <div className="mt-2">
-                  <p className="text-lg font-semibold mt-1">
+                  <p className="text-lg text-balance font-semibold mt-1">
                     {imageTitles[index]}
                   </p>
                   
-                  <div className="flex">
+                  <div className="flex items-center ">
                   <StarRatings
                     rating={4.5} // Example rating, replace with actual rating
                     starRatedColor="gold"

@@ -8,7 +8,7 @@ import {
 } from "react-icons/ri";
 import { BiHotel } from "react-icons/bi";
 import { TbHomeShare } from "react-icons/tb";
-import Ai from "../components/ai";
+import Ai from "../components/ai/ai";
 import Carousel1 from '../components/carousels/carousel1';
 import Carousel2 from "../components/carousels/carousel2";
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import t from "./t.svg";
+import t from "../t.svg";
 import { GrLanguage } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai"; 

@@ -25,10 +25,34 @@ const Carousel1 = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
-    adaptiveHeight:true,
-    swipe:true,
-    verticalSwiping:true
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -37,13 +61,13 @@ const Carousel1 = () => {
         <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">2024’s award-winning shores</p>
         <p className="text-sm sm:text-base">Travelers’ Choice Awards Best of the Best Beaches</p>
       </div>
-      <div className="mx-auto max-w-6xl relative">
+      <div className="mx-auto max-w-64 sm:max-w-xl md:max-w-3xl lg:max-w-5xl relative">
         <Slider {...settings}>
           {images.map((image, index) => (
-            <Link key={index} to="#">
-              <div  className="px-3 relative">
+            <Link key={index} to="#" >
+              <div  className="px-3 relative w-auto">
                 <img
-                  className="mx-auto rounded-md hover:opacity-90 filter brightness-75"
+                  className="mx-auto block rounded-md hover:opacity-90 filter brightness-75"
                   src={image}
                   alt={`place ${index}`}
                 />

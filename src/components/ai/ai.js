@@ -1,6 +1,6 @@
 import React from 'react';
-import gai from '../assets/images/gai.png';
-import gai2 from '../assets/images/gai2.png';
+import gai from '../../assets/images/gai.png';
+import gai2 from '../../assets/images/gai2.png';
 import { IoLocationSharp } from "react-icons/io5";
 
 export default function Ai() {
