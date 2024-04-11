@@ -11,6 +11,7 @@ import { TbHomeShare } from "react-icons/tb";
 import Ai from "../components/ai/ai";
 import Carousel1 from '../components/carousels/carousel1';
 import Carousel2 from "../components/carousels/carousel2";
+import Awards from "../components/awards/awards";
 
 export default function Home() {
   const [section, setSection] = useState("Search All");
@@ -24,7 +25,8 @@ export default function Home() {
   }[section];
 
   return (
-    <div className="flex flex-col justify-center items-center mt-20 px-4 lg:px-32">
+    <div >
+      <div className="flex flex-col justify-center items-center mt-20 px-4 lg:px-32">
       
       {/* Hide this div on small and extra-small screens */}
       <div className="hidden sm:block">
@@ -68,7 +70,7 @@ export default function Home() {
           <input
             type="text"
             placeholder={placeholderText}
-            className="focus:outline-none flex-grow"
+            className="focus:outline-none overflow-hidden flex-grow"
           />
         </div>
         <div className="w-[95%] border-t md:hidden border-gray-300"></div>
@@ -82,5 +84,8 @@ export default function Home() {
       <Carousel1 />
       <Carousel2 />
     </div>
+      <Awards/>
+    </div>
+
   );
 }

@@ -17,7 +17,7 @@ export default function Nav() {
   };
 
   return (
-    <div className=" flex flex-wrap justify-between md:justify-evenly shadow-lg fixed top-0 w-full bg-white z-10 px-4">
+    <div className=" flex flex-wrap justify-between md:justify-evenly shadow-lg fixed top-0 w-full bg-white z-10">
       {/* SVG Menu Icon */}
       <div className="flex items-center">
         <button className="md:hidden hover:text-slate-200" onClick={toggleMenu}>
@@ -40,7 +40,7 @@ export default function Nav() {
       {/* Logo */}
       <div className="flex justify-center items-center">
         <a href="https://www.tripadvisor.com/" className="mt-3 mx-auto">
-          <img src={t} alt="logo" className="h-10" />
+          <img src={t} alt="logo" className="max-h-8 sm:max-h-16" />
         </a>
       </div>
 

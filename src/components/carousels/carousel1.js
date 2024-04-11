@@ -57,17 +57,17 @@ const Carousel1 = () => {
 
   return (
     <div>
-      <div className="mx-2 my-4">
-        <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">2024’s award-winning shores</p>
-        <p className="text-sm sm:text-base">Travelers’ Choice Awards Best of the Best Beaches</p>
+      <div className=" my-4">
+        <p className="font-bold text-lg sm:text-xl text-wrap md:text-2xl lg:text-3xl">2024’s award-winning shores</p>
+        <p className="text-sm sm:text-base text-wrap">Travelers’ Choice Awards Best of the Best Beaches</p>
       </div>
-      <div className="mx-auto max-w-64 sm:max-w-xl md:max-w-3xl lg:max-w-5xl relative">
+      <div className=" max-w-64 sm:max-w-xl md:max-w-3xl lg:max-w-5xl relative">
         <Slider {...settings}>
           {images.map((image, index) => (
             <Link key={index} to="#" >
               <div  className="px-3 relative w-auto">
                 <img
-                  className="mx-auto block rounded-md hover:opacity-90 filter brightness-75"
+                  className=" block rounded-md hover:opacity-90 filter brightness-75"
                   src={image}
                   alt={`place ${index}`}
                 />

@@ -5,7 +5,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 export default function Ai() {
   return (
-    <div className='my-16 rounded-lg bg-gradient-to-r from-slate-200 to-purple-300 relative h-auto'>
+    <div className='my-16 rounded-lg bg-gradient-to-r from-slate-200 to-purple-300 relative h-full'>
       <img src={gai} alt='ai' className='absolute hidden md:block top-0 left-0 z-0 w-full h-full object-cover' />
       <div className='flex flex-col items-center justify-center md:block z-10 mx-2 md:mx-16 lg:mx-44 mt-5 md:my-20'>
         <p className='text-xs text-[rgb(48,29,73)]'>Powered by AI <span className='bg-white sm:px-1 sm:py-1 text-black font-semibold sm:font-bold text-sm rounded-sm'>BETA</span></p>
