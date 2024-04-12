@@ -12,6 +12,7 @@ import Ai from "../components/ai/ai";
 import Carousel1 from '../components/carousels/carousel1';
 import Carousel2 from "../components/carousels/carousel2";
 import Awards from "../components/awards/awards";
+import Trending from "../components/trending/trending";
 
 export default function Home() {
   const [section, setSection] = useState("Search All");
@@ -85,6 +86,7 @@ export default function Home() {
       <Carousel2 />
     </div>
       <Awards/>
+      <Trending/>
     </div>
 
   );
